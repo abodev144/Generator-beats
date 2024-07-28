@@ -26,9 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pydub requests
 
-      - name: Generate Beats
+      - name: Generate and Upload Beats
         run: |
           python beat_generator.py
-        env:
-          SERVER_URL: ${{ secrets.SERVER_URL }}
-          UPLOAD_TOKEN: ${{ secrets.UPLOAD_TOKEN }}
